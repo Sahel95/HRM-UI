@@ -1,0 +1,37 @@
+// RTL By Soroosh Khodami
+
+body{
+  direction: rtl;
+  font-family:yekan-web,Arial;
+}
+
+#page-wrapper{
+  margin:0 250px 0 0;
+}
+
+.form-control {
+    padding: 0 12px;
+  }
+.nav{
+  padding-right:0;
+}
+
+.navbar-header{
+  float:right;
+}
+
+.navbar-brand{
+  float:right;
+}
+
+.dropdown-menu {
+    text-align: right;
+}
+
+.navbar-top-links .dropdown-user {
+    left: 0;
+    right: auto;
+}
+.list-group-item > .badge {
+    float: left;
+}

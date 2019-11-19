@@ -1,0 +1,55 @@
+image: node:8-wheezy
+
+variables:
+  BASE_URL_STAGING: "http://lenz.aban.io:8983"
+  STATIC_URL_STAGING: "http://lenz.ir"
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - npm install
+    - npm -v
+    - node -v
+    
+    # STAGING Build
+    
+    - sed "s@BASE_URL@$BASE_URL_STAGING@g" config/config.sample.js > config/config.js
+    - sed -i "s@STATIC_URL@$STATIC_URL_STAGING@g" config/config.js
+    - echo "Config File:"
+    - cat config/config.js
+    - npm run build
+    - first=$(git describe --tags)
+    - second=$(date '+%Y%m%d%H%M%S')
+    - echo '<!-- Build version '$first'_'$second'-->' >> dist/index.html
+    - mkdir dist_staging
+    - mv dist/* dist_staging/
+    
+  artifacts:
+    expire_in: 1 week
+    paths:
+    - dist
+    - dist_staging
+
+deploy_staging:
+  stage: deploy
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - mkdir -p ~/.ssh
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$STAGING_PRIVATE_KEY")
+    - echo "Staging PK Added"
+  script:
+    - echo "Deploying Lenz-Admin to Staging Server"
+    - ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@lenz.aban.io "cd /var/www/lenzadmin && rm -rf index.html static/"
+    - scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -r dist_staging/* root@lenz.aban.io:/var/www/lenzadmin/
+# - ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@lenz.aban.io "service nginx restart"
+  environment:
+    name: lenz.aban.io
+    url: http://lenz.aban.io:8085
+  when: manual
+  only:
+  - master

@@ -1,0 +1,120 @@
+{
+  "get_genre_list_local":{
+    "id":"get_genre_list_local",
+    "title":"مشاهده لیست ژانر ها از سیستم داخلی",
+    "options":[
+      {
+        "id":"type",
+        "label":"نوع محتوا",
+        "type":"dropdown",
+        "options":{
+          "vod":"ویدیو",
+          "aod":"موسیقی"
+        }
+      }
+    ]
+  },
+  "get_bookmarklist_content":{
+    "id":"get_bookmarklist_content",
+    "title":"ادامه تماشا"
+  },
+  "get_genre_content":{
+    "id":"get_genre_content",
+    "title":"مشاهده لیست ژانر ها از EPG"
+  },
+  "get_categories_content":{
+    "id":"get_categories_content",
+    "title":"لیست دسته‌بندی ها"
+  },
+  "get_vod_content":{
+    "id":"get_vod_content",
+    "title":"محتوای عمومی صفحه VOD"
+  },
+  "get_editors_pick":{
+    "id":"get_editors_pick",
+    "title":"منتخب سردبیر",
+    "options":[
+      {
+        "id":"type",
+        "label":"نوع محتوا",
+        "type":"dropdown",
+        "options":{
+          "vod":"ویدیو",
+          "aod":"موسیقی"
+        }
+      }
+    ]
+  },
+  "get_irancell_series":{
+    "id":"get_irancell_series",
+    "title":"سریال های ایرانسل"
+  },
+  "get_slider_vod_content":{
+    "id":"get_slider_vod_content",
+    "title":"اسلایدر ٰٰVOD"
+  },
+  "get_home_categories":{
+    "id":"get_home_categories",
+    "title":"لیست دسته بندی های صفحه اصلی"
+  },
+  "get_bookmarklist_content":{
+    "id":"get_bookmarklist_content",
+    "title":"ادامه تماشا"
+  },
+  "get_popular_persian":{
+    "id":"get_popular_persian",
+    "title":"محبوب ترین های ایرانی"
+  },
+  "get_latest_series":{
+    "id":"get_latest_series",
+    "title":"جدید ترین سریال‌ها"
+  },
+  "get_latest_movies":{
+    "id":"get_latest_movies",
+    "title":"آخرین فیلم های سینمایی"
+  },
+  "get_lastest_iranian_movie":{
+    "id":"get_lastest_iranian_movie",
+    "title":"جدید ترین فیلم های ایرانی"
+  },
+  "get_irib_banner":{
+    "id":"get_irib_banner",
+    "title":"بنر صدا و سیما"
+  },
+  "get_ordered_vod":{
+    "id":"get_ordered_vod",
+    "title":"محتوای سفارشی",
+    "options":[
+      {
+        "id":"cat_id",
+        "label":"دسته بندی",
+        "type":"text"
+      },
+      {
+        "id":"order_type",
+        "label":"مرتب سازی",
+        "type":"dropdown",
+        "options":{
+          "hottest":"داغ ترین",
+          "popular":"محبوب ترین",
+          "latest":"جدیدترین"
+        }
+      }
+    ]
+  },
+  "get_popular_special_cats":{
+    "id":"get_popular_special_cats",
+    "title":"محبوب ترین دسته ها"
+  },
+  "get_selected_vod_content":{
+    "id":"get_selected_vod_content",
+    "title":"لیست محتواهای مشخص",
+    "options":[
+      {
+        "id":"content_ids",
+        "label":"آي‌دی محتواها (جدا کننده کاما ,)",
+        "type":"text"
+      }
+    ]
+  }
+}
