@@ -12,6 +12,68 @@
 
             </div>
 
+            <div class="row">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="col-sm-12">
+                    <div class="thumbnail">
+                      <div class="caption text-center">
+                        <!-- <div class="position-relative">
+                          <img src="https://az818438.vo.msecnd.net/icons/slack.png" style="width:72px;height:72px;" />
+                        </div> -->
+                        <h4 id="thumbnail-label"><p href="" target="_blank">کودوس</p></h4>
+                        <p>{{member.kudos}}</p>
+                      </div>
+                    </div>
+                  </div>   
+
+                  <div class="col-sm-12">
+                    <div class="thumbnail">
+                      <div class="caption text-center">
+                        <!-- <div class="position-relative">
+                          <img src="https://az818438.vo.msecnd.net/icons/slack.png" style="width:72px;height:72px;" />
+                        </div> -->
+                        <h4 id="thumbnail-label"><p href="" target="_blank">امتیاز</p></h4>
+                        <p>{{member.available_point}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-8">
+                  <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                      <thead>
+                        <tr>
+                          <th>ردیف</th>
+                          <th>فرستنده</th>
+                          <th>ساعت</th>
+                          <th>روز</th>
+                          <th>مقدار</th>
+                          <th> کودس</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr v-for="(item, index) in list" :key="index" >
+                          <td>{{index+1}}</td>
+                          <td>{{item.from_member.first_name + ' ' + item.from_member.last_name}}</td>
+                          <td>{{item.time}}</td>
+                          <td>{{item.date}}</td>
+                          <td>{{item.value}}</td>
+                          <td>{{ item.to_member_kudos }}</td>
+                          <!-- <td>{{item.kudos}}</td> -->
+                          <!-- <td>
+                            <a class="btn btn-primary" :href="'/game/camp/edit/' + item.id" >ویرایش</a>
+                          </td> -->
+                        </tr>
+                      </tbody>
+                    </table>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <!-- <div class="panel panel-success">
               <div class="panel-heading">کودوس</div>
               <div class="panel-body">{{member.kudos}}</div>
@@ -21,63 +83,7 @@
               <div class="panel-body">{{member.available_point}}</div>
             </div>    -->
 
-            <div class="col-sm-3">
-              <div class="thumbnail">
-                <div class="caption text-center">
-                  <!-- <div class="position-relative">
-                    <img src="https://az818438.vo.msecnd.net/icons/slack.png" style="width:72px;height:72px;" />
-                  </div> -->
-                  <h4 id="thumbnail-label"><p href="" target="_blank">کودوس</p></h4>
-                  <p>{{member.kudos}}</p>
-                </div>
-              </div>
-            </div>   
-
-            <div class="col-sm-3">
-              <div class="thumbnail">
-                <div class="caption text-center">
-                  <!-- <div class="position-relative">
-                    <img src="https://az818438.vo.msecnd.net/icons/slack.png" style="width:72px;height:72px;" />
-                  </div> -->
-                  <h4 id="thumbnail-label"><p href="" target="_blank">امتیاز</p></h4>
-                  <p>{{member.available_point}}</p>
-                </div>
-              </div>
-            </div>     
             
-            <div class="row">
-              <div id="message" class="col-md-12 col-xs-12" ></div>
-            </div>
-            <div class="table-responsive">
-              <table class="table table-hover table-striped">
-                <thead>
-                  <tr>
-                    <th>ردیف</th>
-                    <th>فرستنده</th>
-                    <th>ساعت</th>
-                    <th>روز</th>
-                    <th>مقدار</th>
-                    <th> کودس</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="(item, index) in list" :key="index" >
-                    <td>{{index+1}}</td>
-                    <td>{{item.from_member.first_name + ' ' + item.from_member.last_name}}</td>
-                    <td>{{item.time}}</td>
-                    <td>{{item.date}}</td>
-                    <td>{{item.value}}</td>
-                    <td>{{ item.to_member_kudos }}</td>
-                    <!-- <td>{{item.kudos}}</td> -->
-                    <!-- <td>
-                      <a class="btn btn-primary" :href="'/game/camp/edit/' + item.id" >ویرایش</a>
-                    </td> -->
-                  </tr>
-                </tbody>
-              </table>
-
-
-            </div>
 
 
         </div>

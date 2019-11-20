@@ -5,6 +5,7 @@
                 <div class="col-lg-12 col-md-12">
 
                     <h1 class="page-header">انتقال کودس</h1>
+                    
                     <div class="row">
                       <div id="message" class="col-md-12" ></div>
                     </div>
@@ -15,46 +16,58 @@
                     <div class="panel panel-success">
                        <div class="panel-heading">انتقال
                        </div>
-                       <div class="panel-body">
-                         <div class="col-md-4">
-                           <label>انتقال به</label>
-                           <select class="form-control" v-model="to_member">
-                            <option v-for="(member, index) in members"
-                              :key="index"
-                              :value="member.id">{{member.first_name + ' ' + member.last_name}}
-                            </option>
-                          </select>
-                         </div>                         
-                         <div class="col-md-4">
-                           <label>کودس</label>
-                           <input class="form-control" v-model="value" type="number" /><br>
-                         </div>
 
-                         <div class="col-md-4">
+                      <div class="panel-body"> 
+                        <div class="row">
+                          <div class="col-sm-8">
 
-                           <label>امتیاز</label><br>
+                            <div class="col-md-6">
+                              <label>انتقال به</label>
+                              <select class="form-control" v-model="to_member">
+                                <option v-for="(member, index) in members"
+                                  :key="index"
+                                  :value="member.id">{{member.first_name + ' ' + member.last_name}}
+                                </option>
+                              </select>
+                            </div>         
+
+                            <div class="col-md-6">
+                              <label>کودس</label>
+                              <input class="form-control" v-model="value" type="number" /><br>
+                            </div>
+
+                            <div class="col-md-12">
+                              <label>توضیحات</label><br>
+                              <textarea-autosize :min-height="100" :max-height="350" class="col-md-12 form-control" v-model="description"></textarea-autosize>
+                            </div>
+
+                          </div>
+
+                          <div class="col-sm-4">
+
+                              <div class="thumbnail">
+                                <div class="caption text-center">
+                                  <!-- <div class="position-relative">
+                                    <img src="https://az818438.vo.msecnd.net/icons/slack.png" style="width:72px;height:72px;" />
+                                  </div> -->
+                                  <h4 id="thumbnail-label"><p href="" target="_blank">امتیاز</p></h4>
+                                  <p>{{available_ponit}}</p>
+                                </div>
+                              </div>
+
+                          </div>
+
+                        </div>
+                      </div>
+
                            <!-- <input type="checkbox" id="disabled" v-model="item.is_disabled">
                             <label for="disabled">غیرفعال</label><br> -->
-                            <div>{{available_ponit}}</div>
                            <!-- <input type="radio" id="active" value=false v-model="item.is_disabled">
                             <label for="active">فعال</label>
                             <input type="radio" id="disable" value=true v-model="item.is_disabled">
                             <label for="disable">غیرفعال</label> -->
-                         </div>
-                         <div class="row">
-                           <div class="col-md-8">
-                             <label>توضیحات</label><br>
-                             <textarea-autosize :min-height="100" :max-height="350" class="col-md-12 form-control" v-model="description"></textarea-autosize>
-                           </div>
-                           <!-- <div class="col-md-4">
-                             <label>شروع کمپین</label><br>
-                             <input type="date" v-model="item.start"/><br>
-                             <label>پایان کمپین</label><br>
-                             <input type="date" v-model="item.end"/>
-                           </div> -->
-                         </div>
 
-                       </div>
+
                        <div class="panel-footer">
                          <div class="row text-left">
                           <div class="col-md-12">
@@ -136,3 +149,23 @@ export default {
     }
   }
 </script>
+
+
+<style scoped>
+
+
+.thumbnail {
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+   transition: 0.3s;
+   min-width: 40%;
+   border-radius: 5px;
+ }
+
+ .thumbnail-description {
+   min-height: 40px;
+ }
+
+ /* .thumbnail:hover {
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
+ }  */
+</style>

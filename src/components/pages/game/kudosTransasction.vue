@@ -9,13 +9,19 @@
 
                     </h1>
                     <div class="col-md-12">
-                      <label>از تاریخ</label>
-                      <input type="date" v-model="from_date"/>
+                      <div class="col-md-4">
+                        <label>از تاریخ</label>
+                        <input type="date" v-model="from_date"/>
+                      </div>
 
-                      <label>تا تاریخ</label>
-                      <input type="date" v-model="to_date"/>
-
-                      <button class="btn btn-success" @click="getContents()">جستجو</button>
+                      <div class="col-md-4">
+                        <label>تا تاریخ</label>
+                        <input type="date" v-model="to_date"/>                        
+                      </div>
+                      
+                      <div class="col-md-4">
+                        <button class="btn btn-success" @click="getContents()">جستجو</button>
+                      </div>
                       <!-- <label>پایان کمپین</label><br>
                       <input type="date" v-model="item.end"/> -->
                     </div>
@@ -176,3 +182,5 @@ export default {
     }
   }
 </script>
+
+
