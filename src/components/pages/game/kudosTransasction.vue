@@ -183,4 +183,10 @@ export default {
   }
 </script>
 
-
+<style scoped>
+input[type="date"]::-webkit-inner-spin-button
+ {
+    display: none;
+    -webkit-appearance: none;
+}
+</style>

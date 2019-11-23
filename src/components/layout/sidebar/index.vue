@@ -9,6 +9,21 @@ export default {
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
                 <li><router-link to="/" exact> <i class="fa fa-dashboard fa-fw"></i> پیشخوان </router-link></li>
+                
+                
+                <li><a data-toggle="collapse" href="#layoutsub"><i class="fa fa-user fa-fw"></i>کاربر<span class="pull-left">+</span></a>
+
+                  <ul id="layoutsub" class="nav nav-second-level collapse">
+                      <li>
+                         <router-link to="/user/profile" >پروفایل</router-link>
+                      </li>
+                      <li>
+                        <router-link to="/user/password/change" >تغییر رمز عبور</router-link>
+                      </li>
+                  </ul>
+                </li>
+
+
                 <!-- <li><a data-toggle="collapse" href="#layoutsub"><i class="fa fa-table fa-fw"></i> مدیریت صفحه‌ها<span class="pull-left">+</span></a>
 
                   <ul id="layoutsub" class="nav nav-second-level collapse">
@@ -32,6 +47,8 @@ export default {
 
                   </ul>
                 </li> -->
+
+                
                 <li><a data-toggle="collapse" href="#campaignlistsub"><i class="fa fa-bars fa-fw"></i>کودس<span class="pull-left">+</span></a>
 
                   <ul id="campaignlistsub" class="nav nav-second-level collapse">

@@ -13,6 +13,9 @@ import kudosTransfer from 'components/pages/game/kudosTransfer'
 import gameSubCampEdit from 'components/pages/game/editSubCampaign'
 import gameCampAdd from 'components/pages/game/addCampaign'
 import gameCampEdit from 'components/pages/game/editCampaign'
+import profile from 'components/pages/user/profile'
+import changePassword from 'components/pages/user/changePassword'
+
 Vue.use(Router)
 
 export default new Router({
@@ -84,6 +87,16 @@ export default new Router({
       path: '/game/camp/add',
       name: 'gameCampAdd',
       component: gameCampAdd
+    },
+    {
+      path: '/user/profile',
+      name: 'profile',
+      component: profile
+    },
+    {
+      path: '/user/password/change',
+      name: 'changePassword',
+      component: changePassword
     }
   ]
 })

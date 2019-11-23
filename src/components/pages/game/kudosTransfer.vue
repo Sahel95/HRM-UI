@@ -165,6 +165,14 @@ export default {
    min-height: 40px;
  }
 
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
  /* .thumbnail:hover {
    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
  }  */

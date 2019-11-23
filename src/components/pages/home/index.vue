@@ -15,28 +15,20 @@
             <div class="row">
               <div class="row">
                 <div class="col-sm-4">
-                  <div class="col-sm-12">
-                    <div class="thumbnail">
-                      <div class="caption text-center">
-                        <!-- <div class="position-relative">
-                          <img src="https://az818438.vo.msecnd.net/icons/slack.png" style="width:72px;height:72px;" />
-                        </div> -->
-                        <h4 id="thumbnail-label"><p href="" target="_blank">کودوس</p></h4>
-                        <p>{{member.kudos}}</p>
-                      </div>
-                    </div>
-                  </div>   
+                  <div class="col-sm-8">
+                    <div class="panel panel-success dashboard-panel">
+                      <div class="panel-heading">کودس</div>
+                      <div class="panel-body">{{member.kudos}}</div>
+                    </div> 
+                  </div> 
+                  
 
-                  <div class="col-sm-12">
-                    <div class="thumbnail">
-                      <div class="caption text-center">
-                        <!-- <div class="position-relative">
-                          <img src="https://az818438.vo.msecnd.net/icons/slack.png" style="width:72px;height:72px;" />
-                        </div> -->
-                        <h4 id="thumbnail-label"><p href="" target="_blank">امتیاز</p></h4>
-                        <p>{{member.available_point}}</p>
-                      </div>
-                    </div>
+
+                  <div class="col-sm-8">
+                    <div class="panel panel-success dashboard-panel">
+                      <div class="panel-heading">امتیاز</div>
+                      <div class="panel-body">{{member.available_point}}</div>
+                    </div> 
                   </div>
                 </div>
                 <div class="col-sm-8">
@@ -121,18 +113,8 @@ export default {
 <style scoped>
 
 
-.thumbnail {
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
-   transition: 0.3s;
-   min-width: 40%;
-   border-radius: 5px;
- }
-
- .thumbnail-description {
-   min-height: 40px;
- }
-
- /* .thumbnail:hover {
-   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
- }  */
+.dashboard-panel{
+  text-align: center;
+  
+}
 </style>
