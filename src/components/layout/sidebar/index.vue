@@ -64,9 +64,9 @@ export default {
                          <router-link to="/kudos/transaction">گردش حساب</router-link>
                       </li>
                       
-                      <li>
+                      <!-- <li>
                          <router-link to="/game/subcamp/list">اعضای تیم</router-link>
-                      </li>
+                      </li> -->
                       <!-- <li>
                          <router-link to="/game/leaderboard">لیدربرد</router-link>
                       </li> -->

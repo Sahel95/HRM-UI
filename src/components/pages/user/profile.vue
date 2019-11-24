@@ -22,24 +22,24 @@
 
                         <div class="col-md-6">
                             <label>نام کاربری :</label>
-                            <span>asdasdasdad</span><br>
+                            <span>{{member.username}}</span><br>
 
                             <label>نام و نام خانوداگی :</label>
-                            <span>asdasdasdad</span><br>
+                            <span>{{member.fist_name + " " + member.last_name}}</span><br>
 
                             <label>شماره شناسنامه :</label>
-                            <span>asdasdasdad</span><br>
+                            <span>{{member.national_code}}</span><br>
                         </div>
 
                         <div class="col-md-6">
                             <label>تلفن :</label>
-                            <span>asdasdasdad</span><br>
+                            <span>{{member.tel}}</span><br>
 
                             <label>ایمیل :</label>
-                            <span>asdasdasdad</span><br>
+                            <span>{{member.email}}</span><br>
 
                             <label>سِمَت :</label>
-                            <span>asdasdasdad</span><br>
+                            <span>{{member.position}}</span><br>
                         </div>
 
 
@@ -75,20 +75,33 @@
 export default {
     data(){
         return{
-            current_password: "asdasdad",
-            new_password:"",
-            renter_password:""
+            member: []
         }
     },
-    methods:{
-        changePassword: function(){
-            this.$http.post(this.baseUrl + '/member/change-password/' , {'current_password': this.current_password , 'new_password': this.new_password, 'renter_password':this.renter_password }).then(function(data) {
-                $('#message').html("<div class='alert alert-success'>عملیات با موفقیت انجام شد</div>");
-                // window.location.href="/game/subcamp/edit/" + data.body.item
-            }.bind(this), function(data){
+    created(){
+            this.$http.get(this.baseUrl + '/member/detail/' ).then(function(response) {
+                this.member=response.body.data
+            }.bind(this), function(response){
                 $('#message').html("<div class='alert alert-danger'>خطایی رخ داده است</div>");
             });
         }
-    }
+    
 }
 </script>
+
+
+
+export default {
+  data() {
+    return {
+      members:[]
+      }
+    },
+    created(){
+        this.$http.get(this.baseUrl + '/member/detail/' ).then(function(response) {
+            this.member=response.body.data
+        }.bind(this), function(response){
+            $('#message').html("<div class='alert alert-danger'>خطایی رخ داده است</div>");
+        });
+    }
+  }
