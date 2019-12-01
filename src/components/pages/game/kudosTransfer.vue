@@ -129,16 +129,14 @@ export default {
     },
     created(){
 
-      this.$http.get(this.baseUrl + '/member/kudos-receptor/').then(function(response) {
+      this.$http.get(this.baseUrl + '/api/v1/member/kudos-receptor/').then(function(response) {
           this.members = response.body.data
-          console.log(':::::::::::::::::::::::::::::::',this.members)
         }.bind(this), function(data){
           $('#message').html("<div class='alert alert-danger'>خطایی رخ داده است</div>");
         });
 
-      this.$http.get(this.baseUrl + '/kudos/member-available-point/').then(function(response) {
+      this.$http.get(this.baseUrl + '/api/v1/kudos/member-available-point/').then(function(response) {
           this.available_ponit = response.body.data.available_point
-          console.log(':::::::::::::::::::::::::::::::',this.available_ponit)
         }.bind(this), function(data){
           $('#message').html("<div class='alert alert-danger'>خطایی رخ داده است</div>");
         });
@@ -166,8 +164,8 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
   margin: 0; 
+  display: none
 }
-
 
  /* .thumbnail:hover {
    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);

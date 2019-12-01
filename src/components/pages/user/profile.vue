@@ -25,7 +25,7 @@
                             <span>{{member.username}}</span><br>
 
                             <label>نام و نام خانوداگی :</label>
-                            <span>{{member.fist_name + " " + member.last_name}}</span><br>
+                            <span>{{member.first_name + " " + member.last_name}}</span><br>
 
                             <label>شماره شناسنامه :</label>
                             <span>{{member.national_code}}</span><br>
@@ -33,7 +33,7 @@
 
                         <div class="col-md-6">
                             <label>تلفن :</label>
-                            <span>{{member.tel}}</span><br>
+                            <span>{{member.mobile_number}}</span><br>
 
                             <label>ایمیل :</label>
                             <span>{{member.email}}</span><br>
@@ -79,7 +79,7 @@ export default {
         }
     },
     created(){
-            this.$http.get(this.baseUrl + '/member/detail/' ).then(function(response) {
+            this.$http.get(this.baseUrl + '/api/v1/member/detail/' ).then(function(response) {
                 this.member=response.body.data
             }.bind(this), function(response){
                 $('#message').html("<div class='alert alert-danger'>خطایی رخ داده است</div>");

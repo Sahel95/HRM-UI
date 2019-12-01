@@ -92,12 +92,12 @@ export default {
       }
   },
   created(){
-      this.$http.get(this.baseUrl + '/member/detail/').then(function(response) {
+      this.$http.get(this.baseUrl + '/api/v1/member/detail/').then(function(response) {
           this.member = response.body.data
         }.bind(this), function(data){
           $('#message').html("<div class='alert alert-danger'>خطایی رخ داده است</div>");
         }); 
-      this.$http.get(this.baseUrl + '/kudos/dashboard-kudos-transaction/',
+      this.$http.get(this.baseUrl + '/api/v1/kudos/dashboard-kudos-transaction/',
       {"params":{"page":this.page}}).then(function(response) {
           this.list = response.body.data
         }.bind(this), function(data){

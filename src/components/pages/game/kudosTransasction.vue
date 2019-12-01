@@ -121,7 +121,7 @@ export default {
 
         console.log(this.from_date)
         console.log(this.to_date)
-        this.$http.get(this.baseUrl + '/kudos/kudos-transaction/',
+        this.$http.get(this.baseUrl + '/api/v1/kudos/kudos-transaction/',
         {
           "params": data
         }).then(function(response) {

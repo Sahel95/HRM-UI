@@ -42,7 +42,7 @@ export default {
         // this.$validator.validateAll().then((result) => {
         //   if (result) {
         // var token = 'Basic ' + btoa(this.username + ':' + this.password)
-        this.$http.post(this.baseUrl + '/member/login/',
+        this.$http.post(this.baseUrl + '/api/v1/member/login/',
          {
           'username':this.username,
           'password':this.password

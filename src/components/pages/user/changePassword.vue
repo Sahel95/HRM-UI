@@ -75,11 +75,17 @@ export default {
     },
     methods:{
         changePassword: function(){
-            this.$http.post(this.baseUrl + '/member/change-password/' , {'current_password': this.current_password , 'new_password': this.new_password, 'renter_password':this.renter_password }).then(function(data) {
+            this.$http.post(this.baseUrl + '/api/v1/member/change-password/' , {'current_password': this.current_password , 'new_password': this.new_password, 'renter_password':this.renter_password }).then(function(data) {
                 $('#message').html("<div class='alert alert-success'>عملیات با موفقیت انجام شد</div>");
                 // window.location.href="/game/subcamp/edit/" + data.body.item
-            }.bind(this), function(data){
-                $('#message').html("<div class='alert alert-danger'>خطایی رخ داده است</div>");
+            }.bind(this), function(response){
+                let error_message = "خطایی رخ داده است"
+                if (response.body.error)
+                    error_message = response.body.error
+
+                $('#message').html("<div class='alert alert-danger'>"+ error_message +"</div>");
+
+
             });
         }
     }
