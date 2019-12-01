@@ -28,66 +28,66 @@ export default new Router({
       component: Home
       // meta: { requiresAuth: true }
     },
-    {
-      path: '/layout/vod',
-      name: 'layoutVodHome',
-      component: layoutVodHome
-    },
-    {
-      path: '/systemStatus',
-      name: 'systemStatus',
-      component: systemStatus
-    },
-    {
-      path: '/list/channels',
-      name: 'channelList',
-      component: channelList
-    },
-    {
-      path: '/list/genres',
-      name: 'genresList',
-      component: genresList
-    },
+    // {
+    //   path: '/layout/vod',
+    //   name: 'layoutVodHome',
+    //   component: layoutVodHome
+    // },
+    // {
+    //   path: '/systemStatus',
+    //   name: 'systemStatus',
+    //   component: systemStatus
+    // },
+    // {
+    //   path: '/list/channels',
+    //   name: 'channelList',
+    //   component: channelList
+    // },
+    // {
+    //   path: '/list/genres',
+    //   name: 'genresList',
+    //   component: genresList
+    // },
     {
       path: '/login',
       name: 'Login',
       component: Login
     },
-    {
-      path: '/users',
-      name: 'userList',
-      component: userList
-    },
-    {
-      path: '/game/subcamp/list',
-      name: 'subCampList',
-      component: subCampList
-    },
+    // {
+    //   path: '/users',
+    //   name: 'userList',
+    //   component: userList
+    // },
+    // {
+    //   path: '/game/subcamp/list',
+    //   name: 'subCampList',
+    //   component: subCampList
+    // },
     {
       path: '/kudos/transaction',
       name: 'kudosTransasction',
       component: kudosTransasction
     },
-    {
-      path: '/game/subcamp/edit/:id',
-      name: 'gameSubCampEdit',
-      component: gameSubCampEdit
-    },
-    {
-      path: '/game/camp/edit/:id',
-      name: 'gameCampEdit',
-      component: gameCampEdit
-    },
+    // {
+    //   path: '/game/subcamp/edit/:id',
+    //   name: 'gameSubCampEdit',
+    //   component: gameSubCampEdit
+    // },
+    // {
+    //   path: '/game/camp/edit/:id',
+    //   name: 'gameCampEdit',
+    //   component: gameCampEdit
+    // },
     {
       path: '/kudos/transfer',
       name: 'kudosTransfer',
       component: kudosTransfer
     },
-    {
-      path: '/game/camp/add',
-      name: 'gameCampAdd',
-      component: gameCampAdd
-    },
+    // {
+    //   path: '/game/camp/add',
+    //   name: 'gameCampAdd',
+    //   component: gameCampAdd
+    // },
     {
       path: '/user/profile',
       name: 'profile',

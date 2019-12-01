@@ -50,9 +50,9 @@
 
                        <div class="panel-footer">
                          <div class="row text-left">
-                          <div class="col-md-12">
-                           <button class="btn btn-success" @click="changePassword()">تغییر</button>
-                         </div>
+                          <!-- <div class="col-md-12">
+                           <button class="btn btn-success" >تغییر</button>
+                         </div> -->
                         </div>
                        </div>
                      </div>
