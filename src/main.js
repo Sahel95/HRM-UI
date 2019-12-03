@@ -36,7 +36,7 @@ Vue.http.interceptors.push((request, next) => {
       Vue.localStorage.remove('token')
       Vue.localStorage.remove('user')
 
-      // window.location.href = '/login?ref=' + encodeURI(window.location.pathname)
+      window.location.href = '/login?ref=' + encodeURI(window.location.pathname)
     }
   })
 })

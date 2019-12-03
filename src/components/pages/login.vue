@@ -77,11 +77,12 @@ export default {
           }
           $('#message').fadeIn();
         })
-
-
-        //   }
-        // })
       }
+
+  },
+  beforeCreate(){
+    if (window.localStorage.getItem('isAuthenticated', true))
+      window.location.href = "/"
   }
 }
 </script>

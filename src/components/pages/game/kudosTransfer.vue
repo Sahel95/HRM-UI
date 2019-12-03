@@ -113,13 +113,16 @@ export default {
     methods:{
       kudosTransfer: function(){
         // let campaignId = this.$route.params.id
-        console.log(':::::::::::::::::::::',this.description)
-        this.$http.post(this.baseUrl + '/kudos/kudos-transfer/' , {'to_member': this.to_member , 'value': Number(this.value), 'description':this.description }).then(function(data) {
+        this.$http.post(this.baseUrl + '/api/v1/kudos/kudos-transfer/' , {'to_member': this.to_member , 'value': Number(this.value), 'description':this.description }).then(function(data) {
             $('#message').html("<div class='alert alert-success'>عملیات با موفقیت انجام شد</div>");
             this.available_ponit=this.available_ponit-this.value
             // window.location.href="/game/subcamp/edit/" + data.body.item
-          }.bind(this), function(data){
-            $('#message').html("<div class='alert alert-danger'>موجودی شما کافی نیست</div>");
+          }.bind(this), function(response){
+            let error_message = "خطایی رخ داده است"
+            if (response.body.error)
+                error_message = response.body.error
+
+            $('#message').html("<div class='alert alert-danger'>"+ error_message +"</div>");
           });
 
       },

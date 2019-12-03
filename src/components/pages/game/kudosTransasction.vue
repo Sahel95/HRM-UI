@@ -48,7 +48,7 @@
                             <td>{{ (page-1)*10+index+1 }}</td>
                             <td>{{item.from_member.first_name + ' ' + item.from_member.last_name}}</td>
                             <td>{{item.to_member.first_name + ' ' + item.to_member.last_name}}</td>
-                            <td>{{item.time}}</td>
+                            <td>{{item.time.slice(0,8)}}</td>
                             <td>{{item.date}}</td>
                             <td>{{item.value}}</td>
                             <td>{{ item.from_member_available_point }}</td>
@@ -127,8 +127,9 @@ export default {
         }).then(function(response) {
 
             this.list = response.body.data
+            // this.list[0].time = this.list[0].time.slice(0,8)
             this.page_size=Math.ceil(response.body.page_size)
-
+            
           }.bind(this), function(data){
               $('#message').html("<div class='alert alert-danger'>خطایی رخ داده است</div>");
           });

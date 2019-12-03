@@ -14,7 +14,7 @@ export default {
                 <span class="sr-only">Toggle navigation</span>
                 <template v-for="n in 3"> <span class="icon-bar"></span> </template>
             </button>
-            <router-link :to="{ name: 'home' }" class="navbar-brand"><i class="logo"></i>پروفایل کاربر</router-link>
+            <router-link :to="{ name: 'home' }" class="navbar-brand"><i class="logo"></i>پنل کاربر</router-link>
         </div>
         <top-links/>
     </nav>

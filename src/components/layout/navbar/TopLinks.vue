@@ -24,7 +24,7 @@
 
         <dropdown icon="fa-user" d-class="dropdown-user" >
 
-            <li><a href="#"><i class="fa fa-user fa-fw"></i><router-link to="/user/profile" >پروفایل کاربر</router-link></a></li>
+            <li><a href="#"><i class="fa fa-user fa-fw"></i><router-link to="/user/profile" >پنل کاربر</router-link></a></li>
             <!-- <li><a href="#"><i class="fa fa-gear fa-fw"></i> تنظیمات</a></li> -->
             <li class="divider"></li>
             <li><a href="#" @click="logout"><i class="fa fa-sign-out fa-fw"></i> خروج</a></li>
