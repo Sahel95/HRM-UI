@@ -130,8 +130,12 @@ export default {
             // this.list[0].time = this.list[0].time.slice(0,8)
             this.page_size=Math.ceil(response.body.page_size)
             
-          }.bind(this), function(data){
-              $('#message').html("<div class='alert alert-danger'>خطایی رخ داده است</div>");
+          }.bind(this), function(response){
+            let error_message = "خطایی رخ داده است"
+            if (response.body.error)
+                error_message = response.body.error
+
+            $('#message').html("<div class='alert alert-danger'>"+ error_message +"</div>");
           });
           },
 

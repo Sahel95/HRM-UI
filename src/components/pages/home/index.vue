@@ -48,7 +48,7 @@
                         <tr v-for="(item, index) in list" :key="index" >
                           <td>{{index+1}}</td>
                           <td>{{item.from_member.first_name + ' ' + item.from_member.last_name}}</td>
-                          <td>{{item.time}}</td>
+                          <td>{{item.time.slice(0,8)}}</td>
                           <td>{{item.date}}</td>
                           <td>{{item.value}}</td>
                           <td>{{ item.to_member_kudos }}</td>

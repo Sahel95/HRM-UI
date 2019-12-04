@@ -77,6 +77,9 @@ export default {
         changePassword: function(){
             this.$http.post(this.baseUrl + '/api/v1/member/change-password/' , {'current_password': this.current_password , 'new_password': this.new_password, 'renter_password':this.renter_password }).then(function(data) {
                 $('#message').html("<div class='alert alert-success'>عملیات با موفقیت انجام شد</div>");
+                this.current_password=""
+                this.new_password=""
+                this.renter_password=""
                 // window.location.href="/game/subcamp/edit/" + data.body.item
             }.bind(this), function(response){
                 let error_message = "خطایی رخ داده است"
