@@ -41,6 +41,7 @@
                             <th>مقدار</th>
                             <th> امتیاز</th>
                             <th> کودس</th>
+                            <th> توضیحات</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -53,6 +54,7 @@
                             <td>{{item.value}}</td>
                             <td>{{ item.from_member_available_point }}</td>
                             <td>{{ item.to_member_kudos }}</td>
+                            <td><button class="btn btn-success "  data-toggle="modal" data-target="#myModal"  @click="description()">توضیحات</button></td>
                             <!-- <td>{{item.kudos}}</td> -->
                             <!-- <td>
                               <a class="btn btn-primary" :href="'/game/camp/edit/' + item.id" >ویرایش</a>
@@ -66,6 +68,32 @@
 
                     </br>
                 </div>
+
+                <div id="myModal" class="modal fade" role="dialog">
+                  <div class="modal-dialog modal-sm">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">توضیحات</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+
+
+
+
+
                 <ul class="pagination">
                   <li><a class='disabled' @click="lastPage(); getContents();" >آخرین</a></li>
                   <li><a href="#" @click="nextPage(); getContents();" >بعدی</a></li>
@@ -119,15 +147,12 @@ export default {
         if (this.to_date)
           data['to_date']  = this.to_date
 
-        console.log(this.from_date)
-        console.log(this.to_date)
         this.$http.get(this.baseUrl + '/api/v1/kudos/kudos-transaction/',
         {
           "params": data
         }).then(function(response) {
 
             this.list = response.body.data
-            // this.list[0].time = this.list[0].time.slice(0,8)
             this.page_size=Math.ceil(response.body.page_size)
             
           }.bind(this), function(response){
@@ -138,6 +163,12 @@ export default {
             $('#message').html("<div class='alert alert-danger'>"+ error_message +"</div>");
           });
           },
+
+      description: function(index){
+          this.modal_description=this.list[index].description
+          console.log(this.list[index].description)
+          console.log("salaaaaaaaaaaaaam")
+      },
 
       nextPage: function(){
 

@@ -37,8 +37,8 @@
                             </div>
 
                             <div class="col-md-12">
-                              <label>توضیحات (اختیاری)</label><br>
-                              <textarea-autosize :min-height="100" :max-height="350" class="col-md-12 form-control" v-model="description"></textarea-autosize>
+                              <label>توضیحات</label><br>
+                              <textarea-autosize :min-height="100" :max-height="350" :maxlength="100" class="col-md-12 form-control" v-model="description"></textarea-autosize>
                             </div>
 
                           </div>

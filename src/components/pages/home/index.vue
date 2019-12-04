@@ -42,6 +42,7 @@
                           <th>روز</th>
                           <th>کودس دریافتی</th>
                           <th> کودس کنونی</th>
+                          <th>توضیحات</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -52,6 +53,7 @@
                           <td>{{item.date}}</td>
                           <td>{{item.value}}</td>
                           <td>{{ item.to_member_kudos }}</td>
+                          <td><button class="btn btn-success " data-toggle="modal" data-target="#myModal" >توضیحات</button></td>
                           <!-- <td>{{item.kudos}}</td> -->
                           <!-- <td>
                             <a class="btn btn-primary" :href="'/game/camp/edit/' + item.id" >ویرایش</a>
@@ -60,6 +62,25 @@
                       </tbody>
                     </table>
 
+
+                  </div>
+                </div>
+                <div id="myModal" class="modal fade" role="dialog">
+                  <div class="modal-dialog modal-sm">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">توضیحات</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
 
                   </div>
                 </div>
